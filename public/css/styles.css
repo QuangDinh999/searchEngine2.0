@@ -1,0 +1,454 @@
+.content {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 80vh; /* Đảm bảo rằng nội dung nằm giữa màn hình */
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Các ô vuông sẽ được căn đều trên mỗi hàng */
+    max-width: 800px; /* Điều chỉnh kích thước của lưới */
+    margin-left: 280px;
+}
+
+.grid-item {
+    flex: 0 0 calc(35% - 19px); /* Chia lưới thành 3 cột và điều chỉnh khoảng cách giữa chúng */
+    background-color: #d3d3d3;
+    margin-bottom: 20px; /* Điều chỉnh khoảng cách dưới cùng của mỗi ô vuông */
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #0b0d14;
+}
+
+.menu-icon {
+    font-size: 36px;
+}
+
+.menu-title {
+    display: block;
+    margin-top: 10px;
+}
+.title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 30px; /* Khoảng cách từ tiêu đề đến lưới */
+}
+.chat-container {
+    width: 80%;
+    max-width: 1600px; /* Điều chỉnh kích thước của container chat */
+    max-height: calc(90vh - 100px); /* 80% chiều cao của viewport trừ đi chiều cao của thanh search */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Hiển thị thanh cuộn ngang khi nội dung vượt quá */
+    flex-grow: 1; /* Cho phép chat-container mở rộng để điều chỉnh kích thước trong flexbox layout */
+}
+
+
+.chat-bubble {
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.system-chat {
+    width: 90%;
+    align-self: flex-start; /* Đặt hệ thống chat ở bên trái */
+}
+
+.user-chat {
+    align-self: flex-end; /* Đặt người dùng chat ở bên phải */
+}
+
+.search-bar {
+    margin-top: 20px;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.avatar {
+    width: 30px; /* Độ rộng của avatar */
+    height: 30px; /* Độ cao của avatar */
+    border-radius: 50%; /* Hình dạng hình tròn */
+    margin-right: 10px; /* Khoảng cách giữa avatar và nội dung tin nhắn */
+}
+
+.user-chat .avatar {
+    float: right; /* Avatar người dùng nằm bên phải */
+}
+
+.system-chat .avatar {
+    float: left; /* Avatar hệ thống nằm bên trái */
+}
+
+.footer {
+    padding: 20px 0;
+}
+
+
+
+.input-group {
+    width: 100%; /* Sử dụng toàn bộ chiều rộng của container */
+}
+
+.input-group input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group-append {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+}
+.btn-secondary {
+    background-color: #ffffff;
+    border-color:  #ffffff;
+}
+
+.btn-primary {
+    color: transparent;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.square-rounded {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.hidden {
+    display: none;
+}
+.profile {
+    width: 400px;
+    margin: auto;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    margin-bottom: 10px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%; /* Điều chỉnh kích thước video container tại đây */
+    padding-bottom: 1.25%; /* Tỷ lệ khung hình 16:9 (56.25% = 9/16 * 100) */
+}
+
+.video-container iframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 240px;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    z-index: 9;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Điều chỉnh chiều rộng của form */
+    max-width: 600px; /* Giới hạn chiều rộng tối đa của form */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 8;
+}
+
+.sidebar {
+    width: 200px; /* Chiều rộng mặc định của sidebar */
+    height: 100vh; /* Chiều cao của sidebar */
+    background-color: #333; /* Màu nền của sidebar */
+    color: #fff; /* Màu chữ của sidebar */
+    transition: width 0.3s ease; /* Hiệu ứng khi thay đổi chiều rộng */
+    position: relative;
+    display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+    flex-direction: column; /* Xếp nội dung theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+}
+
+
+.toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+}
+
+.toggle-btn2 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+}
+
+.toggle-btn i {
+    font-size: 20px;
+}
+
+.toggle-btn2 i {
+    font-size: 20px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link i {
+    margin-right: 10px;
+}
+
+.new-chat {
+    margin-top: 20px; /* Thêm margin top cho chức năng New Chat */
+    display: flex;
+    align-items: center;
+}
+
+
+
+.upload-options {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    z-index: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.new-chat-icon-button {
+    margin-right: 0px;
+}
+.search-history {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-list {
+    list-style: none;
+    padding: 0;
+}
+
+.search-list li {
+    margin-bottom: 5px;
+}
+
+.search-list li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.search-list li a:hover {
+    text-decoration: underline;
+}
+.search-history-container {
+    border: 1px solid #fff; /* Tạo viền trắng 1px xung quanh khung */
+    border-radius: 5px; /* Làm tròn các góc của khung */
+    padding: 10px; /* Thêm padding để tạo khoảng cách giữa viền và nội dung */
+    max-height: 200px; /* Đặt chiều cao tối đa cho khung lịch sử */
+    overflow-y: auto; /* Cho phép cuộn khi lịch sử tìm kiếm dài hơn */
+}
+
+.selected-media {
+    display: none;
+    width: 100px;
+    height: 100px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    margin-bottom: 20px;
+}
+
+
+.selected-media.show {
+    display: block;
+}
+
+.selected-media span {
+    margin-right: 10px;
+}
+
+.selected-media button {
+    margin-left: 10px;
+}
+
+.upload-options {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    z-index: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-form {
+    position: relative;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.search-input {
+    width: 100%;
+    margin-top: 10px; /* Adjust as needed */
+}
+
+#pinButton {
+    transform: rotate(270deg) scale(1.5); /* Điều chỉnh tỷ lệ phóng to tùy ý */
+    /*transform: scale(1.5);*/
+
+}
+
+.selected-media {
+    max-width: 100%; /* Đảm bảo phần tử media không vượt quá kích thước của container */
+    max-height: 100%; /* Đảm bảo phần tử media không vượt quá kích thước của container */
+    margin: 0 auto; /* Canh giữa phần tử media */
+    display: block; /* Đảm bảo phần tử media hiển thị dưới dạng block để có thể canh giữa */
+}
+
+.demo-media-container {
+    display: flex; /* Sử dụng flexbox cho phần demo */
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    align-items: center; /* Canh giữa theo chiều dọc */
+    height: 200px; /* Chiều cao của phần demo */
+    border: 1px solid #ccc; /* Viền xung quanh phần demo */
+    margin-top: 20px; /* Khoảng cách giữa phần demo và phần chat */
+    padding: 10px; /* Khoảng cách bên trong phần demo */
+}
+
+/*ss*/
+
+
+
+.chat-bubble {
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.system-chat {
+    width: 90%;
+    align-self: flex-start; /* Đặt hệ thống chat ở bên trái */
+}
+.related-images {
+    display: flex;
+    gap: 2px;
+}
+
+.related-image {
+    width: calc(50% - 1px); /* 50% width for each image with 1px margin */
+    height: auto;
+}
+.result-container {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    width: 100%; /* Đặt chiều rộng của result-container */
+    min-width: 300px; /* Đặt kích thước tối thiểu cho result-container */
+}
+
+
+.result-item {
+    width: calc(33.33% + -2px);/* Tính toán chiều rộng của mỗi ô item để chúng cách nhau 5px */
+    height: 300px; /* Đặt chiều cao của mỗi ô item */
+    background-color: white; /* Màu nền của mỗi ô item */
+    overflow-y: auto;
+    flex-direction: column;
+    justify-content: space-between; /* Canh hai sub-item ra hai bên */
+    align-items: center;
+}
+.sub-item-container {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+}
+
+.sub-item {
+    margin: 2px; /* Khoảng cách giữa các sub-item */
+    width: 200px; /* Độ rộng của mỗi sub-item */
+    align-self: flex-start; /* Căn trên cùng của sub-item container */
+}
+
+.sub-item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Căn giữa theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    max-width: 100%;
+    max-height: 100%;
+    padding: 5px; /* Thêm padding để tránh chữ bị tràn ra ngoài */
+
+}
+
+
+.sub-item-content img {
+    width: 70%;
+    height: auto;
+    align-self: center; /* Căn giữa ảnh theo chiều ngang */
+    margin-bottom: auto; /* Đẩy ảnh lên trên cùng */
+}
+
+
+
+.title2 {
+    text-align: center; /* Căn giữa tiêu đề */
+    margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và sub items */
+}
